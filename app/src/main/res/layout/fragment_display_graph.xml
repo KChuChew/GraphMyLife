@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable name="mainActivityViewModel"
+            type="ca.tutorials.graphmylife.viewmodels.MainActivityViewModel"/>
     </data>
 
     <LinearLayout

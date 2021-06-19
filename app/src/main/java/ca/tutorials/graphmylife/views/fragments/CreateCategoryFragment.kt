@@ -10,12 +10,14 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import ca.tutorials.graphmylife.R
 import ca.tutorials.graphmylife.databinding.FragmentCreateCategoryBinding
 import ca.tutorials.graphmylife.interfaces.ICreateCategoryListener
 import ca.tutorials.graphmylife.models.ListViewButtonHolder
 import ca.tutorials.graphmylife.viewmodels.ChartCategoryViewModel
 import ca.tutorials.graphmylife.viewmodels.CreateCategoryViewModel
+import ca.tutorials.graphmylife.viewmodels.MainActivityViewModel
 import ca.tutorials.graphmylife.views.adapters.ListViewArrayAdapter
 import ca.tutorials.graphmylife.views.dialogs.CreateCategoryFragmentDialog
 
@@ -40,6 +42,7 @@ class CreateCategoryFragment : Fragment(R.layout.fragment_create_category), ICre
 
     private val chartCategoryViewModel : ChartCategoryViewModel by activityViewModels()
     private val createCategoryViewModel : CreateCategoryViewModel by activityViewModels()
+    private val mainActivityViewModel : MainActivityViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +64,7 @@ class CreateCategoryFragment : Fragment(R.layout.fragment_create_category), ICre
         binding.lifecycleOwner = viewLifecycleOwner
         binding.chartCategoryViewModel = chartCategoryViewModel
         binding.createCategoryViewModel = createCategoryViewModel
+        mainActivityViewModel.toolbarVisibility.value = View.VISIBLE
 
         arrayList = arrayListOf()
         arrayAdapter = ListViewArrayAdapter(requireContext(), R.layout.list_view_button_item, arrayList)

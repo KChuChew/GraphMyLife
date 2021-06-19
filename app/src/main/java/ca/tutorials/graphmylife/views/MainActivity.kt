@@ -2,16 +2,22 @@ package ca.tutorials.graphmylife.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.lifecycle.viewModelScope
 import ca.tutorials.graphmylife.databinding.ActivityMainBinding
+import ca.tutorials.graphmylife.viewmodels.MainActivityViewModel
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val mainActivityViewModel : MainActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
 
-        setContentView(view)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.lifecycleOwner = this
+        binding.mainActivityViewModel = mainActivityViewModel
+
+        setContentView(binding.root)
     }
 }

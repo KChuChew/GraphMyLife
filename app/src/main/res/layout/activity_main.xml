@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".views.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <data>
+        <variable name="mainActivityViewModel"
+            type="ca.tutorials.graphmylife.viewmodels.MainActivityViewModel"/>
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:navigationIcon="?homeAsUpIndicator"
-        />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".views.MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/mainActivityFragment"
-        android:name="ca.tutorials.graphmylife.views.fragments.CreateCategoryFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIcon="?homeAsUpIndicator"
+            app:title="Test"
+            android:visibility="@{mainActivityViewModel.toolbarVisibility}" />
 
-</LinearLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/mainActivityFragment"
+            android:name="ca.tutorials.graphmylife.views.fragments.CreateCategoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

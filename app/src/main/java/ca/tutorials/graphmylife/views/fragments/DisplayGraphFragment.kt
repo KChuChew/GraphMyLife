@@ -6,8 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import ca.tutorials.graphmylife.R
 import ca.tutorials.graphmylife.databinding.FragmentDisplayGraphBinding
+import ca.tutorials.graphmylife.viewmodels.MainActivityViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +29,8 @@ class DisplayGraphFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding : FragmentDisplayGraphBinding
+    private val mainActivityViewModel : MainActivityViewModel by activityViewModels()
+    //private lateinit var mainActivityViewModel : MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +48,9 @@ class DisplayGraphFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_display_graph, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_display_graph, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
+        //mainActivityViewModel = ViewModelProvider(requireActivity()) [MainActivityViewModel::class.java]
+        //binding.mainActivityViewModel = mainActivityViewModel
+        mainActivityViewModel.toolbarVisibility.value = View.GONE
 
         return binding.root
     }
