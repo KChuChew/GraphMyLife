@@ -1,6 +1,5 @@
 package ca.tutorials.graphmylife.viewmodels
 
-import android.widget.EditText
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ca.tutorials.graphmylife.models.ListViewButtonHolder
@@ -8,7 +7,12 @@ import ca.tutorials.graphmylife.models.ListViewButtonHolder
 class CreateCategoryViewModel : ViewModel() {
 
     var categoryName = MutableLiveData<String>()
-    var categoryList = MutableLiveData<ArrayList<ListViewButtonHolder>>()
+    var categoryList : MutableLiveData<ArrayList<ListViewButtonHolder>> = MutableLiveData()
+
+    init {
+        categoryList.value = arrayListOf()
+    }
+
 
     /*private val _categoryName = MutableLiveData<String>()
         get() = _categoryName

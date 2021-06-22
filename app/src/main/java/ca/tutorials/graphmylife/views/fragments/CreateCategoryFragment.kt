@@ -66,8 +66,15 @@ class CreateCategoryFragment : Fragment(R.layout.fragment_create_category), ICre
         binding.createCategoryViewModel = createCategoryViewModel
         mainActivityViewModel.toolbarVisibility.value = View.VISIBLE
 
-        arrayList = arrayListOf()
-        arrayAdapter = ListViewArrayAdapter(requireContext(), R.layout.list_view_button_item, arrayList)
+        //arrayList = arrayListOf()
+        /*if(createCategoryViewModel.categoryList.value == null)  {
+            createCategoryViewModel.categoryList.value = arrayListOf()
+        }*/
+
+        arrayAdapter = ListViewArrayAdapter(requireContext(),
+            R.layout.list_view_button_item,
+            createCategoryViewModel.categoryList.value!!
+        )
         binding.listViewCategories.adapter = arrayAdapter
 
         return view
