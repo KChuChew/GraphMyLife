@@ -12,13 +12,4 @@ class CreateCategoryViewModel : ViewModel() {
     init {
         categoryList.value = arrayListOf()
     }
-
-
-    /*private val _categoryName = MutableLiveData<String>()
-        get() = _categoryName
-    var categoryMap = MutableLiveData<Map<String, ChartCategory>>()
-
-    fun setCategoryName(newCategoryName: String) {
-        categoryName.value = newCategoryName
-    }*/
 }
