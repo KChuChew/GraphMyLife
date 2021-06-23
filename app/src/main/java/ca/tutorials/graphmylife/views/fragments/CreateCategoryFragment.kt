@@ -66,11 +66,6 @@ class CreateCategoryFragment : Fragment(R.layout.fragment_create_category), ICre
         binding.createCategoryViewModel = createCategoryViewModel
         mainActivityViewModel.toolbarVisibility.value = View.VISIBLE
 
-        //arrayList = arrayListOf()
-        /*if(createCategoryViewModel.categoryList.value == null)  {
-            createCategoryViewModel.categoryList.value = arrayListOf()
-        }*/
-
         arrayAdapter = ListViewArrayAdapter(requireContext(),
             R.layout.list_view_button_item,
             createCategoryViewModel.categoryList.value!!
@@ -91,11 +86,6 @@ class CreateCategoryFragment : Fragment(R.layout.fragment_create_category), ICre
     }
 
     override fun onDialogPositiveClick(dialog : DialogFragment, categoryName : String) {
-        // add category button here
-        // I think for the model for the category, we need the category name and info
-        // We do not need to put the Button in the VM (bad design)
-        // VM has category name -> Model for category info (category model)
-
         var listViewButtonHolder = ListViewButtonHolder()
         listViewButtonHolder.description = createCategoryViewModel.categoryName.value.toString()
         listViewButtonHolder.fragment = DisplayGraphFragment()

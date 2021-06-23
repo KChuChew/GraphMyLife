@@ -30,7 +30,6 @@ class DisplayGraphFragment : Fragment() {
     private var param2: String? = null
     private lateinit var binding : FragmentDisplayGraphBinding
     private val mainActivityViewModel : MainActivityViewModel by activityViewModels()
-    //private lateinit var mainActivityViewModel : MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,11 +44,8 @@ class DisplayGraphFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_display_graph, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_display_graph, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
-        //mainActivityViewModel = ViewModelProvider(requireActivity()) [MainActivityViewModel::class.java]
-        //binding.mainActivityViewModel = mainActivityViewModel
         mainActivityViewModel.toolbarVisibility.value = View.GONE
 
         return binding.root
