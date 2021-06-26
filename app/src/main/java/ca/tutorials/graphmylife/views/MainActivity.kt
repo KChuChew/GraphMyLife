@@ -2,6 +2,7 @@ package ca.tutorials.graphmylife.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.viewModelScope
 import ca.tutorials.graphmylife.databinding.ActivityMainBinding
@@ -22,6 +23,14 @@ open class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.mainActivityViewModel = mainActivityViewModel
 
+        setSupportActionBar(binding.myToolbar)
+        setNavigationOnClickListener()
+
         setContentView(binding.root)
+    }
+
+    private fun setNavigationOnClickListener() = binding.myToolbar.setNavigationOnClickListener {
+        Toast.makeText(this, "Navigation On Click", Toast.LENGTH_LONG).show()
+        supportFragmentManager.popBackStack()
     }
 }

@@ -23,7 +23,6 @@
             android:elevation="4dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:navigationIcon="?homeAsUpIndicator"
-            app:navigationOnClickListener="@{() -> mainActivityViewModel.navigationOnClick()}"
             app:title="@{Integer.toString(mainActivityViewModel.counter)}"
             android:visibility="@{mainActivityViewModel.toolbarVisibility}" />
 
