@@ -64,7 +64,7 @@ class CreateCategoryFragment : Fragment(R.layout.fragment_create_category), ICre
         binding.lifecycleOwner = viewLifecycleOwner
         binding.chartCategoryViewModel = chartCategoryViewModel
         binding.createCategoryViewModel = createCategoryViewModel
-        mainActivityViewModel.toolbarVisibility.value = View.VISIBLE
+        mainActivityViewModel.toolbarVisibility.value = View.GONE
 
         arrayAdapter = ListViewArrayAdapter(requireContext(),
             R.layout.list_view_button_item,

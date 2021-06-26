@@ -46,7 +46,7 @@ class DisplayGraphFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_display_graph, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
-        mainActivityViewModel.toolbarVisibility.value = View.GONE
+        mainActivityViewModel.toolbarVisibility.value = View.VISIBLE
 
         return binding.root
     }
