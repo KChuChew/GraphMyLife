@@ -10,41 +10,32 @@
 
     <LinearLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:context=".views.fragments.DisplayGraphFragment">
+            <Button android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/black"
+                android:background="#000000"
+                android:drawableLeft="@drawable/ic_launcher_foreground"
+                android:text="Show Graph Type 1"/>
 
-            <Button android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:text="test1"/>
+            <Button android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:background="#000000"
+                android:drawableLeft="@drawable/ic_launcher_foreground"
+                android:text="Show Graph Type 2"/>
 
-            <Button android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:text="test2"/>
-        </LinearLayout>
+            <Button android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:background="#000000"
+                android:drawableLeft="@drawable/ic_launcher_foreground"
+                android:text="Show Graph Type 3"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:context=".views.fragments.DisplayGraphFragment">
-
-            <!-- TODO: Update blank fragment layout -->
-            <Button android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:text="test3"/>
-
-            <Button android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:text="test4"/>
-        </LinearLayout>
+            <Button android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:background="#000000"
+                android:drawableLeft="@drawable/ic_launcher_foreground"
+                android:text="Show Graph Type 4"/>
     </LinearLayout>
 </layout>
